@@ -39,3 +39,9 @@ The VFR compiler cannot consume the full configuration header, so the menu
 carries a VFR-safe mirror of the structs and constants it needs.
 `tools/check_vfr_mirror.py` compares the mirror against the shared header at
 build time and fails on any field, array-size, or constant drift.
+
+## Driver READMEs
+
+Every driver README follows `docs/README_TEMPLATE.md`. Shared facts (SMU map,
+configuration ABI, variable names, validation numbers) are linked rather than
+duplicated, so the documents do not drift from the contract.
