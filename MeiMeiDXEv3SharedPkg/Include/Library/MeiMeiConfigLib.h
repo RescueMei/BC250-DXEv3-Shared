@@ -8,6 +8,8 @@
 #include <Uefi.h>
 #include <Config/MeiMeiDXEv3Config.h>
 
+extern EFI_GUID  gMeiMeiDXEv3ConfigVarGuid;
+
 extern CONST SMU_SAFE_POINT       mMeiMeiDefaultSafePoints[SMU_SAFE_POINT_COUNT];
 extern CONST SMU_GOVERNOR_CONFIG  mMeiMeiDefaultGovernorConfig;
 extern CONST ACPI_CONFIG          mMeiMeiDefaultAcpiConfig;

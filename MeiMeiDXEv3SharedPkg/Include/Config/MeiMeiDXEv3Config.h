@@ -8,9 +8,7 @@
 #ifndef MEIMEIDXEV3_CONFIG_H_
 #define MEIMEIDXEV3_CONFIG_H_
 
-#include <Uefi.h>
-
-extern EFI_GUID  gMeiMeiDXEv3ConfigVarGuid;
+#include <Uefi/UefiBaseType.h>
 
 #define MEIMEIDXEV3_CONFIG_VAR_GUID \
   { 0x49CC168D, 0xE8B0, 0x4613, { 0xA8, 0x07, 0x16, 0x96, 0x99, 0x86, 0x72, 0x6F } }
