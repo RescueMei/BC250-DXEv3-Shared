@@ -18,3 +18,19 @@ an unaligned image is truncated and can wedge the SMU.
 
 Regions not listed here are not available. A new allocation requires a shared
 map change, overlap check, and validation on the BC250.
+
+## Firmware cache-maintenance registers
+
+These are firmware state, not allocations. SMU Patch and CU Unlock use the
+SMU's own cache-publish path so injected SRAM writes become visible, and they
+save/restore these values around every publish. Never use them as scratch or
+payload space.
+
+| Address | Use |
+| --- | --- |
+| `0x184F8` | cache helper entry (call target) |
+| `0x3FFBC` | cache publish flag |
+| `0x3FFF0` | cache publish mask |
+
+The map header exposes them as `MEIMEIDXEV3_SMU_CACHE_CB_ADDR`,
+`MEIMEIDXEV3_SMU_CACHE_FLAG_ADDR`, and `MEIMEIDXEV3_SMU_CACHE_MASK_ADDR`.

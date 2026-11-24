@@ -27,6 +27,16 @@
 
 #define MEIMEIDXEV3_SMU_FIRMWARE_START    0x0003E000U
 
+/*
+  Firmware cache-maintenance registers.  These are firmware state, not a free
+  payload lane: the patch and CU payloads save and restore them around each
+  cache publish so injected SRAM writes become visible to the SMU.  They must
+  never be used as scratch or payload space.
+*/
+#define MEIMEIDXEV3_SMU_CACHE_CB_ADDR     0x000184F8U
+#define MEIMEIDXEV3_SMU_CACHE_FLAG_ADDR   0x0003FFBCU
+#define MEIMEIDXEV3_SMU_CACHE_MASK_ADDR   0x0003FFF0U
+
 #define MEIMEIDXEV3_SMU_REGION_END(base, max) ((base) + (max))
 
 #endif // MEIMEIDXEV3_SMU_MAP_H_
