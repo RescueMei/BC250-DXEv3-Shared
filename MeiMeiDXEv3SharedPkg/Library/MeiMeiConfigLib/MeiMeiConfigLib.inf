@@ -1,0 +1,21 @@
+## @file
+#  Common BC250 DXEv3 configuration helpers.
+##
+[Defines]
+  INF_VERSION                    = 0x0001001A
+  BASE_NAME                      = MeiMeiConfigLib
+  FILE_GUID                      = 2f77d2b1-4b6f-4d7a-9b9f-6d8a3f0c5e21
+  MODULE_TYPE                    = BASE
+  VERSION_STRING                 = 1.0
+  LIBRARY_CLASS                  = MeiMeiConfigLib
+
+[Sources]
+  MeiMeiConfigLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MeiMeiDXEv3SharedPkg/MeiMeiDXEv3SharedPkg.dec
+
+[LibraryClasses]
+  BaseLib
+  UefiRuntimeServicesTableLib
