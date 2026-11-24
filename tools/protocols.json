@@ -1,3 +1,34 @@
 {
-  "protocols": []
+  "protocols": [
+    {
+      "provider": "BC250-DXEv3-SMU-Unlock/BC250DXEv3SMUUnlockPkg/Include/MeiMeiDXEv3SmuUnlockProtocol.h",
+      "provider_sha256": "014d69973d4c4fe255cfa0c17975058b817aa3e0540a1ab1e94bbbb15498bcab",
+      "consumers": [
+        "BC250-DXEv3-Core-Unlock/BC250DXEv3SMUCoreUnlockPkg/Include/MeiMeiDXEv3SmuUnlockProtocol.h",
+        "BC250-DXEv3-CU-Unlock/BC250DXEv3SMUCuUnlockPkg/Include/MeiMeiDXEv3SmuUnlockProtocol.h"
+      ]
+    },
+    {
+      "provider": "BC250-DXEv3-Core-Unlock/BC250DXEv3SMUCoreUnlockPkg/Include/MeiMeiDXEv3CoreUnlockProtocol.h",
+      "provider_sha256": "1708b327fe25f3be039d46b19a6a3622b67f76c05dd2335e69186d40630b06a1",
+      "consumers": [
+        "BC250-DXEv3-Menu-Driver/BC250DXEv3MenuDriverPkg/Include/MeiMeiDXEv3CoreUnlockProtocol.h"
+      ]
+    },
+    {
+      "provider": "BC250-DXEv3-CU-Unlock/BC250DXEv3SMUCuUnlockPkg/Include/MeiMeiDXEv3CuUnlockProtocol.h",
+      "provider_sha256": "7427c4256419dd40c812d7446a22f951f1f0c63fd2c1542033abbd490b62f2e6",
+      "consumers": [
+        "BC250-DXEv3-Menu-Driver/BC250DXEv3MenuDriverPkg/Include/MeiMeiDXEv3CuUnlockProtocol.h"
+      ]
+    },
+    {
+      "provider": "BC250-DXEv3-Cold-Boot/BC250DXEv3ColdBootPkg/Include/BC250ColdBoot.h",
+      "provider_sha256": "c6e79027e92e3446b84b285c009016f18bfe5ef0ec4cbd9e47ea37570f286ff7",
+      "consumers": [
+        "BC250-DXEv3-Core-Unlock/BC250DXEv3SMUCoreUnlockPkg/Include/BC250ColdBoot.h",
+        "BC250-DXEv3-CU-Unlock/BC250DXEv3SMUCuUnlockPkg/Include/BC250ColdBoot.h"
+      ]
+    }
+  ]
 }
