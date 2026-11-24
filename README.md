@@ -32,3 +32,10 @@ provider change without a manifest update fails.
   its own vendored copies. Its build runs the checker against that manifest.
 
 Both manifests must be updated in the same change when a provider ABI changes.
+
+## VFR mirror check
+
+The VFR compiler cannot consume the full configuration header, so the menu
+carries a VFR-safe mirror of the structs and constants it needs.
+`tools/check_vfr_mirror.py` compares the mirror against the shared header at
+build time and fails on any field, array-size, or constant drift.
