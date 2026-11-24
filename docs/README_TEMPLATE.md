@@ -10,6 +10,8 @@ Rules:
 - Do not repeat the SMU SRAM table or the configuration struct definitions.
   Link `BC250-DXEv3-Shared/docs/SMU_MEMORY_MAP.md` and the shared config header.
 - List the driver's own Depex and the protocols it produces and consumes.
+- If the driver does not access SMU hardware, omit every SMU section and row.
+  Do not write "SMU SRAM: none" or a placement section just to fill the shape.
 - State the fail-closed behavior: what happens when the variable is missing,
   undersized, malformed, wrong-attribute, or disabled.
 - Validation must be dated and must distinguish the configured ceiling from the
@@ -36,7 +38,7 @@ targets.>
 | Produces | `<protocol(s), or "no protocol">` |
 | Consumes | `<protocols, variables, shared package>` |
 | Configuration | `<VariableName>`, `<N>` bytes |
-| SMU SRAM | `<lane from the shared map, or "none">` |
+| SMU SRAM | `<lane from the shared map>` (omit this row if the driver does not access the SMU) |
 | Compliance | [COMPLIANCE.md](COMPLIANCE.md) |
 
 ## Dependencies
@@ -65,7 +67,8 @@ produces nor consumes a protocol.>
 
 ## SMU SRAM placement
 
-<One line with this driver's lane from the canonical map, then:
+<SMU-touching drivers only; omit the heading entirely otherwise. One line with
+this driver's lane from the canonical map, then:
 See [SMU_MEMORY_MAP.md](https://github.com/RescueMei/BC250-DXEv3-Shared/blob/main/docs/SMU_MEMORY_MAP.md).
 Mention any `STATIC_ASSERT`s that pin the lane and that images are 4-byte
 aligned. Never paste the whole family table.>
