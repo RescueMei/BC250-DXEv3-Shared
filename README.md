@@ -45,3 +45,11 @@ build time and fails on any field, array-size, or constant drift.
 Every driver README follows `docs/README_TEMPLATE.md`. Shared facts (SMU map,
 configuration ABI, variable names, validation numbers) are linked rather than
 duplicated, so the documents do not drift from the contract.
+
+## Driver info protocol
+
+Every driver installs `gMeiMeiDXEv3DriverInfoProtocolGuid`
+(`Include/Protocol/MeiMeiDXEv3DriverInfo.h`) with a static identity record:
+name, version, module GUID, config schema, payload version, and capabilities.
+The `BC250-DXEv3-Driver-Info` driver enumerates those records at `ReadyToBoot`
+and publishes a runtime-only JSON variable for OS telemetry.

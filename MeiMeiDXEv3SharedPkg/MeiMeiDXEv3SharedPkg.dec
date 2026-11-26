@@ -18,6 +18,10 @@
   ## Vendor GUID shared by every MeiMeiDXEv3 configuration variable.
   gMeiMeiDXEv3ConfigVarGuid = { 0x49CC168D, 0xE8B0, 0x4613, { 0xA8, 0x07, 0x16, 0x96, 0x99, 0x86, 0x72, 0x6F } }
 
+[Protocols]
+  ## Driver identity/version record, installed by every DXEv3 DXE driver.
+  gMeiMeiDXEv3DriverInfoProtocolGuid = { 0x6F0A2C1E, 0x8B4D, 0x4E77, { 0x9A, 0x31, 0x5C, 0x2D, 0x8E, 0x04, 0xB7, 0x61 } }
+
 [LibraryClasses]
   ## Common configuration read/default/validation helpers.
   MeiMeiConfigLib|Include/Library/MeiMeiConfigLib.h
